@@ -43,7 +43,7 @@ if option == "1":
 elif option == "2":
     #Renseignement des paramétres
     watermark_text = input("Enter watermark text: ")
-    watermark_color = input("Enter watermark color (in RGB, separated by commas): ")
+    watermark_color_str = input("Enter watermark color (in RGB, separated by commas): ")
     font_path = input("Enter path: ")
     watermark_opacity = int(input("Enter watermark opacity (between 0 and 255): "))
 
@@ -64,7 +64,7 @@ elif option == "2":
         font = ImageFont.truetype(font_path, font_size)
 
         # Conversion de la couleur du watermark en tuple RGB
-        watermark_color = tuple(map(int, watermark_color.split(",")))
+        watermark_color = tuple(map(int, watermark_color_str.split(",")))
 
         text_width, text_height = draw.textsize(watermark_text, font=font)
         draw.text(((image.width - text_width) / 2, (image.height - text_height) / 2), watermark_text, fill=(*watermark_color, watermark_opacity), font=font)
@@ -73,4 +73,4 @@ elif option == "2":
         new_filename = os.path.join(output_folder, filename)
         image.save(new_filename)
 
-    print("Watermark successfully added to images in the folder.)
+    print("Watermark successfully added to images in the folder.")
