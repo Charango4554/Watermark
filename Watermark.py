@@ -1,10 +1,10 @@
 import os
 from PIL import Image, ImageDraw, ImageFont
 
-# Demande à l'utilisateur de saisir le chemin d'accès du dossier à parcourir
+# chemin d'accès du dossier à parcourir
 folder_path = input("Enter the folder path: ")
 
-# Demande à l'utilisateur de saisir l'option pour le watermark
+# option pour le watermark
 option = input("Enter the watermark option (1'default settings' or 2'Custom settings'): ")
 
 if option == "1":
